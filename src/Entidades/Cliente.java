@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Mario Mendoza
  */
-public abstract class Cliente implements CalcPrecio {
+public abstract class Cliente implements Funciones {
 
     String Nombre;
     String DUI;
@@ -29,8 +29,19 @@ public abstract class Cliente implements CalcPrecio {
     }
 
     @Override
-    public double Tprecio(double Cantidad, double precio) {
+    public double SubTotal(double Cantidad, double precio) {
         return Cantidad * precio;
+    }
+
+    @Override
+    public double iva(double precio) {
+        return precio * 0.13;
+    }
+
+    @Override
+    public double Total(double cantidad, double precio, double TT) {
+        Double subt = cantidad * precio;
+        return subt * TT;
     }
 
     public String getProducto() {

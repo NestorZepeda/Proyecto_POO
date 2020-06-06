@@ -9,8 +9,10 @@ package Entidades;
  *
  * @author Mario Mendoza
  */
-public interface CalcPrecio {
+public interface Funciones {
 
-    public double Tprecio(double Cantidad, double precio);
+    public double SubTotal(double Cantidad, double precio);
+    public double Total(double cantidad, double precio, double TT);
+    public double iva(double precio);
 
 }
